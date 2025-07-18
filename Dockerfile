@@ -9,6 +9,6 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-ENV FLASK_APP=app.py
+ENV FLASK_APP=encurta_url
 
 CMD ["gunicorn", "--bind", "0.0.0.0:5000", "encurta_url:app"]
