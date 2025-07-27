@@ -1,0 +1,1 @@
+from encurta_url import app, db
