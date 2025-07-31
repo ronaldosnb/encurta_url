@@ -1,4 +1,4 @@
-from encurta_url import app, db
+from . import db
 
 class Url(db.Model):
     id = db.Column(db.Integer, primary_key=True)
