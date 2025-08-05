@@ -7,13 +7,9 @@ from .utils import gerar_short_url
 def index():
     if request.method == 'POST':
         original_url = request.form['url']
-
-        # Verifica se a URL original já foi encurtada antes
         url_existente = Url.query.filter_by(original_url=original_url).first()
         if url_existente:
             return render_template('index.html', short_url=url_existente.short_url)
-
-        # Gera uma nova short_url garantindo que seja única
         while True:
             short_url = gerar_short_url()
             if not Url.query.filter_by(short_url=short_url).first():
